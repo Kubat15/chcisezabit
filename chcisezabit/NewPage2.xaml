@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="chcisezabit.NewPage2"
+             BackgroundImageSource="bek.jpg">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <Label x:Name="skore" FontSize="Medium" FontAttributes="Bold" TextColor="#FFFFFF"/>
+                <Label x:Name="serie" FontSize="Medium" TextColor="#CCCCCC"/>
+                <Label x:Name="streakk" FontSize="Medium" TextColor="#CCCCCC"/>
+
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Margin="10">
+
+                    <Image x:Name="vobrazek" WidthRequest="300" HeightRequest="300" Margin="10"/>
+
+                    <StackLayout>
+
+                        <Entry x:Name="psani" Text="{Binding SearchQuery}" BackgroundColor="LightGray"/>
+
+                        <ListView HeightRequest="250" BackgroundColor="LightBlue" x:Name="vyber" ItemsSource="{Binding FilteredNames}"
+                          ItemTapped="ListView_ItemTapped">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <TextCell Text="{Binding Name}" />
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+
+
+
+
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
