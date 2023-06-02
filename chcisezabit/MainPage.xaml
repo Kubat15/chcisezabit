@@ -7,15 +7,15 @@
     <ScrollView>
         <VerticalStackLayout VerticalOptions="Center" Padding="20">
 
-            <Label VerticalOptions="Start" HorizontalOptions="Center" FontSize="40" Text="Main Menu"/>
+            <Label TextColor="White" VerticalOptions="Start" HorizontalOptions="Center" FontSize="40" Text="Main Menu"/>
             <Label/>
             <Label/>
             <Label/>
     
        
 
-            <Button Margin="20" BackgroundColor="Azure" Text="EASY" Clicked="Button_Clicked"/>
-            <Button Margin="20" BackgroundColor="Azure" Text="NORMAL" Clicked="Button_Clicked_1"/>
+            <Button TextColor="MediumPurple" Margin="20" BackgroundColor="Azure" Text="EASY" Clicked="Button_Clicked"/>
+            <Button TextColor="MediumPurple" Margin="20" BackgroundColor="Azure" Text="NORMAL" Clicked="Button_Clicked_1"/>
 
         </VerticalStackLayout>
     </ScrollView>
