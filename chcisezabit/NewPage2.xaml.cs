@@ -35,19 +35,19 @@ public partial class NewPage2 : ContentPage
 
     public void ShowRandomImage()
     {
-        // vyberte náhodnou schopnost z listu schopnosí
+        // vyberte nÃ¡hodnou schopnost z listu schopnosÃ­
         var randomAbility = abilities[new Random().Next(abilities.Count)];
 
-        // urèete název obrázku na základì náhodné schopnosti
+        // urÃ¨ete nÃ¡zev obrÃ¡zku na zÃ¡kladÃ¬ nÃ¡hodnÃ© schopnosti
         var imageName = $"{randomAbility}.png";
 
-        // najdìte správnou odpovìï na základì názvu schopnosti
+        // najdÃ¬te sprÃ¡vnou odpovÃ¬Ã¯ na zÃ¡kladÃ¬ nÃ¡zvu schopnosti
         correctAnswer = GetChampionNameByAbility(randomAbility);
 
 
 
 
-        // najdìte ostatní náhodné odpovìdi z listu všech championù, kde správná odpovìï není obsaena
+        // najdÃ¬te ostatnÃ­ nÃ¡hodnÃ© odpovÃ¬di z listu vÅ¡ech championÃ¹, kde sprÃ¡vnÃ¡ odpovÃ¬Ã¯ nenÃ­ obsaÅ¾ena
         var allChampions = new List<string> { "Aatrox", "Aurelion Sol", "Tristana", "Xin Zhao", "Alistar", "Akshan", "Akali", "Ahri", "Amumu", "Anivia", "Annie",
         "Aphelios", "Ashe", "Azir", "Bard", "Bel'Veth", "Blitzcrank", "Brand", "Braum", "Caitlyn", "Camille", "Cassiopeia", "Corki", "Darius", "Diana", "DrMundo", "Draven",
         "Ekko", "Elise", "Evelynn", "Ezreal", "FiddleSticks", "Fiora", "Fizz", "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", "Hecarim", "Heimerdinger",
@@ -65,7 +65,7 @@ public partial class NewPage2 : ContentPage
 
 
 
-        // zobrazte obrázek a odpovìdi na obrazovce
+        // zobrazte obrÃ¡zek a odpovÃ¬di na obrazovce
         vobrazek.Source = ImageSource.FromFile($"{imageName}");
 
 
@@ -402,7 +402,7 @@ public partial class NewPage2 : ContentPage
             case "zoee":
                 return "Zoe";
             case "zyraw":
-                return "zyraw";
+                return "Zyra";
 
             default:
                 throw new Exception("Invalid ability name");
@@ -458,15 +458,15 @@ public partial class NewPage2 : ContentPage
             // Inicializace seznamu jmen
 
 
-            // a další...
+            // a dalÅ¡Ã­...
 
-            // Zpoèátku zobrazíme všechna jména
+            // ZpoÃ¨Ã¡tku zobrazÃ­me vÅ¡echna jmÃ©na
             FilteredNames = Names;
         }
 
         private void UpdateFilteredNames()
         {
-            // Aktualizace filtrovanıch jmen na základì vstupního dotazu
+            // Aktualizace filtrovanÃ½ch jmen na zÃ¡kladÃ¬ vstupnÃ­ho dotazu
             var filtered = Names.Where(n => n.Name.StartsWith(SearchQuery, StringComparison.OrdinalIgnoreCase));
             FilteredNames = new ObservableCollection<NameModel>(filtered);
         }
@@ -490,7 +490,7 @@ public partial class NewPage2 : ContentPage
         }
 
 
-        // ovìøení správnosti odpovìdi
+        // ovÃ¬Ã¸enÃ­ sprÃ¡vnosti odpovÃ¬di
         if (selectedNameString == correctAnswer)
         {
             score++;
