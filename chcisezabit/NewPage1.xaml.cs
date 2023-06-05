@@ -28,19 +28,19 @@ public partial class NewPage1 : ContentPage
 
     public void ShowRandomImage()
     {
-        // vyberte n·hodnou schopnost z listu schopnosÌ
+        // vyberte n√°hodnou schopnost z listu schopnos√≠
         var randomAbility = abilities[new Random().Next(abilities.Count)];
 
-        // urËete n·zev obr·zku na z·kladÏ n·hodnÈ schopnosti
+        // ur√®ete n√°zev obr√°zku na z√°klad√¨ n√°hodn√© schopnosti
         var imageName = $"{randomAbility}.png";
 
-        // najdÏte spr·vnou odpovÏÔ na z·kladÏ n·zvu schopnosti
+        // najd√¨te spr√°vnou odpov√¨√Ø na z√°klad√¨ n√°zvu schopnosti
         correctAnswer = GetChampionNameByAbility(randomAbility);
 
-        // vytvo¯te list odpovÏdÌ, kde prvnÌ odpovÏÔ je spr·vn·
+        // vytvo√∏te list odpov√¨d√≠, kde prvn√≠ odpov√¨√Ø je spr√°vn√°
         var answers = new List<string> { correctAnswer };
 
-        // najdÏte ostatnÌ n·hodnÈ odpovÏdi z listu vöech champion˘, kde spr·vn· odpovÏÔ nenÌ obsaûena
+        // najd√¨te ostatn√≠ n√°hodn√© odpov√¨di z listu v≈°ech champion√π, kde spr√°vn√° odpov√¨√Ø nen√≠ obsa≈æena
         var allChampions = new List<string> { "Aatrox", "Aurelion Sol", "Tristana", "Xin Zhao", "Alistar", "Akshan", "Akali", "Ahri", "Amumu", "Anivia", "Annie",
         "Aphelios", "Ashe", "Azir", "Bard", "Bel'Veth", "Blitzcrank", "Brand", "Braum", "Caitlyn", "Camille", "Cassiopeia", "Corki", "Darius", "Diana", "DrMundo", "Draven",
         "Ekko", "Elise", "Evelynn", "Ezreal", "FiddleSticks", "Fiora", "Fizz", "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", "Hecarim", "Heimerdinger",
@@ -60,10 +60,10 @@ public partial class NewPage1 : ContentPage
             answers.Add(randomAnswer);
         }
 
-        // n·hodnÏ zamÌchejte odpovÏdi
+        // n√°hodn√¨ zam√≠chejte odpov√¨di
         answers = answers.OrderBy(x => Guid.NewGuid()).ToList();
 
-        // zobrazte obr·zek a odpovÏdi na obrazovce
+        // zobrazte obr√°zek a odpov√¨di na obrazovce
         vobrazek.Source = ImageSource.FromFile($"{imageName}");
         answerButton1.Text = answers[0];
         answerButton2.Text = answers[1];
@@ -403,7 +403,7 @@ public partial class NewPage1 : ContentPage
             case "zoee":
                 return "Zoe";
             case "zyraw":
-                return "zyraw";
+                return "Zyra";
 
             default:
                 throw new Exception("Invalid ability name");
@@ -415,7 +415,7 @@ public partial class NewPage1 : ContentPage
     {
         var selectedAnswer = (sender as Button).Text;
 
-        // ovÏ¯enÌ spr·vnosti odpovÏdi
+        // ov√¨√∏en√≠ spr√°vnosti odpov√¨di
         if (selectedAnswer == correctAnswer)
         {
             score++;
